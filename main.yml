@@ -2,10 +2,10 @@
 - name: personal laptop setup on ubuntu
   hosts: localhost
   connection: local
-  
+
   vars:
   - dropbox_version: 2015.10.28_amd64
-  
+
   roles:
     - misc
     - dropbox
@@ -17,4 +17,3 @@
 
   #~ - name: install gnome-shell
     #~ apt: name=gnome-shell
-  
