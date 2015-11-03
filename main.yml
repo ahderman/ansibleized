@@ -9,6 +9,7 @@
   roles:
     - misc
     - dropbox
+    - atom-editor
     #~ - role: nvm
       #~ nvm:
         #~ version: v0.29.0

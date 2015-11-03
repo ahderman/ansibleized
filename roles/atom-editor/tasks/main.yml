@@ -1,0 +1,8 @@
+---
+- name: download
+  get_url: url={{deb_url}} dest={{deb}}
+  tags: [atom-editor]
+- name: install
+  apt: deb={{deb}}
+  become: yes
+  tags: [atom-editor]
