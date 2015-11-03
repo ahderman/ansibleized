@@ -1,0 +1,4 @@
+---
+dropbox_version: 2015.10.28_amd64
+dropbox_url: https://linux.dropbox.com/packages/ubuntu/dropbox_{{dropbox_version}}.deb
+dropbox_deb: /tmp/{{dropbox_url | basename}}

@@ -1,0 +1,17 @@
+---
+- apt: update_cache=yes
+  become: yes
+- name: install misc packages
+  apt: name={{item}}
+  become: yes
+  with_items:
+  - ubuntu-restricted-extras
+  - keepassx
+  - gimp
+  - git
+  - gitg
+  - gitk
+  - meld
+  - clementine
+  - chromium-browser
+  - terminator

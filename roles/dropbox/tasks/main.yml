@@ -1,0 +1,11 @@
+---
+- name: download dropbox
+  get_url: url={{dropbox_url}} dest={{dropbox_deb}}
+  tags: [dropbox]
+- name: install dropbox
+  apt: deb={{dropbox_deb}}
+  become: yes
+  tags: [dropbox]
+- name: start dropbox
+  shell: dropbox start -i
+  tags: [dropbox]
