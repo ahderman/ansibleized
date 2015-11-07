@@ -10,6 +10,10 @@
     - misc
     - dropbox
     - atom-editor
+    - ansiblebit.launchpad-ppa-webupd8
+    - role: ansiblebit.oracle-java
+      ansiblebit.oracle-java:
+        oracle_java_set_as_default: yes
     #~ - role: nvm
       #~ nvm:
         #~ version: v0.29.0
