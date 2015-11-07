@@ -12,6 +12,12 @@
   - gitg
   - gitk
   - meld
-  - clementine
   - chromium-browser
   - terminator
+  - clementine
+  - vlc
+  - gnome-mplayer
+
+- name: uninstall totem
+  apt: name=totem state=absent
+  become: yes
