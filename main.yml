@@ -4,6 +4,7 @@
   connection: local
 
   vars:
+  - home: "{{ansible_env.HOME}}"
   - dropbox_version: 2015.10.28_amd64
 
   roles:
