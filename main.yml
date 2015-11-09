@@ -8,6 +8,7 @@
   - dropbox_version: 2015.10.28_amd64
 
   roles:
+    - terminator
     - gnome-shell
     - misc
     - dropbox

@@ -1,0 +1,20 @@
+---
+- name: install terminator
+  apt: name=terminator
+  become: yes
+
+- name: create terminator config directory
+  file:
+    path: '{{home}}/.config/terminator'
+    state: directory
+
+- name: check whether config already exists
+  stat:
+    path: '{{home}}/.config/terminator/config'
+  register: config_file
+
+- name: copy terminator config
+  copy:
+    src: config
+    dest: '{{home}}/.config/terminator/config'
+  when: config_file.stat.exists == False
