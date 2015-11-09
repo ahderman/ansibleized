@@ -8,11 +8,11 @@
   - dropbox_version: 2015.10.28_amd64
 
   roles:
-    - terminator
     - gnome-shell
     - misc
     - dropbox
     - atom-editor
+    - terminator
     - ansiblebit.launchpad-ppa-webupd8
     - role: ansiblebit.oracle-java
       ansiblebit.oracle-java:
