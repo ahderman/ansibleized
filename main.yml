@@ -20,4 +20,32 @@
       #~ nvm:
         #~ version: v0.29.0
         #~ node_version: stable
+  tasks:
+    - name: enable bash history search with page-up and page-down
+      become: yes
+      shell: >
+          cp --no-clobber /etc/inputrc /etc/inputrc.backup &&
+          cat /etc/inputrc.backup
+          | sed 's/^# \(.* history-search-.*\)/\1/g'
+          > /etc/inputrc
 
+      # replace lines
+      #   HISTSIZE=1000
+      #   HISTFILESIZE=2000
+      #   #force_color_prompt=yes
+      #   PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
+      # with
+      #   HISTSIZE=100000
+      #   HISTFILESIZE=100000
+      #   force_color_prompt=yes
+      #   PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\] \n\$ '
+      #
+      # Note: "'" represents a single quote escaped in double quotes
+    - name: edit .bashrc (history size and color prompt)
+      shell: >
+          cp --no-clobber {{home}}/.bashrc {{home}}/.bashrc.backup &&
+          cat {{home}}/.bashrc.backup
+          | sed 's/^\(HIST[A-Z]*SIZE\)=[0-9]\+/\1=100000/g'
+          | sed 's/^#\(force_color_prompt=yes\)/\1/'
+          | sed 's/PS1=\(.*\033.*\)\(\\$ '"'"'\)/PS1=\1 \\n\2/'
+          > {{home}}/.bashrc
