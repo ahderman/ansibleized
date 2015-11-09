@@ -8,15 +8,26 @@
   - ubuntu-restricted-extras
   - keepassx
   - gimp
-  - git
-  - gitg
-  - gitk
-  - meld
   - chromium-browser
   - terminator
+  # media players
   - clementine
   - vlc
   - gnome-mplayer
+  # programming tools
+  - git
+  - git-cola
+  - gitk
+  - meld
+  - vim
+  - scite
+  # python
+  - ipython
+  # c++
+  - libtool
+  - autoconf
+  - automake
+  - libboost-all-dev
 
 - name: uninstall totem
   apt: name=totem state=absent
